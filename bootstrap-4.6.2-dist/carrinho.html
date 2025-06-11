@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Cardápio - Delivery Rápido</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="css/bootstrap.css">
+   
 </head>
 <body>
   <header>
@@ -25,12 +25,33 @@
       </nav>
     </header>
 
-  <main>
-  <ul id="carrinhoid">
-  </ul>
-  <h1></h1>
-  </main>
+    <section id="produtos">
 
-  <script src="script.js"></script>
+      <div class="container">
+        <div class="row">
+
+  <ul id="carrinhoid">
+
+  </ul>
+</div>
+</section>
+
+  
 </body>
+
+<!--exibindo itens do carrinho-->
+
+<script>
+       
+ var carrinhoRecuperado = JSON.parse(localStorage.getItem('cr'));
+let lista = document.getElementById("carrinhoid");  //acessando elemento html pelo id atrapves do DOM
+for (let i = 0; i < carrinhoRecuperado.length; i++) { 
+  var item = carrinhoRecuperado[i]; //
+  const div = document.createElement("li");
+  div.textContent = `${item.nome} - R$${item.preco}`
+  lista.appendChild(div);
+}
+
+  </script>
+
 </html>

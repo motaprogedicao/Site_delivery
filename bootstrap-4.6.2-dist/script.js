@@ -1,4 +1,5 @@
 var botoes = document.getElementsByClassName('adicionar');
+
 //captura de dados
 //seleciona todos elementos html que tem a classe adicionar e retorna uma HTMLCollection
 let carrinho = []; //cria o vetor do carrinho;
@@ -24,11 +25,15 @@ function adicionar_produto(event){
  localStorage.setItem('cr', JSON.stringify(carrinho))
     }
 
-var carrinhoRecuperado = JSON.parse(localStorage.getItem('cr'));
 
-
+    
 for(var i=0;i<botoes.length;i++){ //percorre cada botão da HTMLCollection e adiciona um código que será executado quando o botão for clicado
     botoes[i].addEventListener("click",adicionar_produto);
 }
+
+
+
+
+
 
 
